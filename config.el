@@ -41,6 +41,7 @@
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
+;;
 ;; roam stuff
 (setq org-roam-directory (file-truename "~/org-roam"))
 (setq find-file-visit-truename t)
@@ -53,19 +54,15 @@
          :target (file+head "%<%Y-%m-%d>.org"
                             "#+title: %<%Y-%m-%d>\n"))))
 (setq org-agenda-files '("~/org-roam" "~/org-roam/daily" "~/org"))
-
-
+;;
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
-
-;; OpenAI API Key
-(setq openai-key "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")
-
+;;
 ;; ChatGPT
 (use-package! chatgpt
   :defer t
   :bind ("C-c q" . chatgpt-query))
-
+;;
 (setq chatgpt-code-query-map
       '(
         ;; ChatGPT.el defaults, string for each shortcut
@@ -114,5 +111,3 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-;;
-;; For company-anaconda
